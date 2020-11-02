@@ -1,0 +1,33 @@
+
+FamilyMember:
+img
+name: string
+mother: String	(Foreign key)
+father: String
+Array children: String
+familyHouse family ()
+bio: String
+typiska egenskaper: String
+(titel, job)
+
+
+oneToMany,
+
+FamilyHouse
+name:String
+headOfTheHouse: FamilyMember
+importantPersons: Array FamilyMember
+HighSeat: String
+Resources: Array String (object?)
+description: String //decribes the house
+typiska egenskaper: String
+militaryForce
+population: int
+
+index.html = Översiktssidan. Meny uppe.
+	nav
+		- family-house = Översiktssidan för ätter
+		- family-house/helgaatten = Detaljsida för en enskild ätt. Laddas in ifrån databasen
+		- family-house/helgaatten/Saga = om inloggad visa info, om ej (page could not be found)
+		
+
