@@ -5,7 +5,7 @@ name: string
 mother: String	(Foreign key)
 father: String
 Array children: String
-familyHouse family ()
+familyHouse family List
 bio: String
 typiska egenskaper: String
 (titel, job)
@@ -34,5 +34,13 @@ index.html = Översiktssidan. Meny uppe.
 		
 
 
-Prioriterings map (ätteledare);
+FamilyHouseMemberLink:
+    private FamilyMember member;
+    private FamilyHouse family;
+    private String TypeHousePriority;
 
+
+FamilyMemberLink:
+     private FamilyMember child;
+      private FamilyMember member;
+        private String Relation; // what
