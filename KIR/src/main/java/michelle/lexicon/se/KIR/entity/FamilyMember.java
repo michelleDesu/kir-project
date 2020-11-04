@@ -1,46 +1,51 @@
 package michelle.lexicon.se.KIR.entity;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
 public class FamilyMember {
     private int familyId;
     private String familyImage;
+    private String name;
     private FamilyMember mother;
     private FamilyMember father;
     private String fictiveMother;
     private String fictiveFather;
-    private List<FamilyMemberLink> children;
-    private List<FamilyHouseMemberLink> family;
+    private List<FamilyMemberFamilyMemberLink> familyMemberLinkList;
+    private List<FamilyHouseFamilyMemberLink> houseMemberLinkList;
     private String memberBiography;
     private String personalityTraits;
+    private String jobTitle;
 
     public FamilyMember() { }
 
-    public FamilyMember(int familyId, String familyImage, FamilyMember mother, FamilyMember father, String fictiveMother, String fictiveFather, List<FamilyMemberLink> children, List<FamilyHouseMemberLink> family, String memberBiography, String personalityTraits) {
+    public FamilyMember(int familyId, String familyImage, String name, FamilyMember mother, FamilyMember father, String fictiveMother, String fictiveFather, List<FamilyMemberFamilyMemberLink> familyMemberLinkList, List<FamilyHouseFamilyMemberLink> houseMemberLinkList, String memberBiography, String personalityTraits, String jobTitle) {
         this.familyId = familyId;
         this.familyImage = familyImage;
+        this.name = name;
         this.mother = mother;
         this.father = father;
         this.fictiveMother = fictiveMother;
         this.fictiveFather = fictiveFather;
-        this.children = children;
-        this.family = family;
+        this.familyMemberLinkList = familyMemberLinkList;
+        this.houseMemberLinkList = houseMemberLinkList;
         this.memberBiography = memberBiography;
         this.personalityTraits = personalityTraits;
+        this.jobTitle = jobTitle;
     }
 
-    public FamilyMember(String familyImage, FamilyMember mother, FamilyMember father, String fictiveMother, String fictiveFather, List<FamilyMemberLink> children, List<FamilyHouseMemberLink> family, String memberBiography, String personalityTraits) {
+    public FamilyMember(String familyImage, String name, FamilyMember mother, FamilyMember father, String fictiveMother, String fictiveFather, List<FamilyMemberFamilyMemberLink> familyMemberLinkList, List<FamilyHouseFamilyMemberLink> houseMemberLinkList, String memberBiography, String personalityTraits, String jobTitle) {
         this.familyImage = familyImage;
+        this.name = name;
         this.mother = mother;
         this.father = father;
         this.fictiveMother = fictiveMother;
         this.fictiveFather = fictiveFather;
-        this.children = children;
-        this.family = family;
+        this.familyMemberLinkList = familyMemberLinkList;
+        this.houseMemberLinkList = houseMemberLinkList;
         this.memberBiography = memberBiography;
         this.personalityTraits = personalityTraits;
+        this.jobTitle = jobTitle;
     }
 
 
@@ -54,6 +59,14 @@ public class FamilyMember {
 
     public void setFamilyImage(String familyImage) {
         this.familyImage = familyImage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public FamilyMember getMother() {
@@ -88,20 +101,20 @@ public class FamilyMember {
         this.fictiveFather = fictiveFather;
     }
 
-    public List<FamilyMemberLink> getChildren() {
-        return children;
+    public List<FamilyMemberFamilyMemberLink> getFamilyMemberLinkList() {
+        return familyMemberLinkList;
     }
 
-    public void setChildren(List<FamilyMemberLink> children) {
-        this.children = children;
+    public void setFamilyMemberLinkList(List<FamilyMemberFamilyMemberLink> familyMemberLinkList) {
+        this.familyMemberLinkList = familyMemberLinkList;
     }
 
-    public List<FamilyHouseMemberLink> getFamily() {
-        return family;
+    public List<FamilyHouseFamilyMemberLink> getHouseMemberLinkList() {
+        return houseMemberLinkList;
     }
 
-    public void setFamily(List<FamilyHouseMemberLink> family) {
-        this.family = family;
+    public void setHouseMemberLinkList(List<FamilyHouseFamilyMemberLink> houseMemberLinkList) {
+        this.houseMemberLinkList = houseMemberLinkList;
     }
 
     public String getMemberBiography() {
@@ -120,6 +133,14 @@ public class FamilyMember {
         this.personalityTraits = personalityTraits;
     }
 
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -127,33 +148,37 @@ public class FamilyMember {
         FamilyMember that = (FamilyMember) o;
         return familyId == that.familyId &&
                 Objects.equals(familyImage, that.familyImage) &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(mother, that.mother) &&
                 Objects.equals(father, that.father) &&
                 Objects.equals(fictiveMother, that.fictiveMother) &&
                 Objects.equals(fictiveFather, that.fictiveFather) &&
-                Objects.equals(children, that.children) &&
-                Objects.equals(family, that.family) &&
+                Objects.equals(familyMemberLinkList, that.familyMemberLinkList) &&
+                Objects.equals(houseMemberLinkList, that.houseMemberLinkList) &&
                 Objects.equals(memberBiography, that.memberBiography) &&
-                Objects.equals(personalityTraits, that.personalityTraits);
+                Objects.equals(personalityTraits, that.personalityTraits) &&
+                Objects.equals(jobTitle, that.jobTitle);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(familyId, familyImage, mother, father, fictiveMother, fictiveFather, children, family, memberBiography, personalityTraits);
+        return Objects.hash(familyId, familyImage, name, mother, father, fictiveMother, fictiveFather, memberBiography, personalityTraits, jobTitle);
     }
 
     @Override
     public String toString() {
         return "FamilyMember{" + "familyId=" + familyId +
                 ", familyImage='" + familyImage + '\'' +
+                ", name='" + name + '\'' +
                 ", mother=" + mother +
                 ", father=" + father +
                 ", fictiveMother='" + fictiveMother + '\'' +
                 ", fictiveFather='" + fictiveFather + '\'' +
-                ", children=" + children +
-                ", family=" + family +
+                ", familyMemberLinkList=" + familyMemberLinkList.size() +
+                ", houseMemberLinkList=" + houseMemberLinkList.size() +
                 ", memberBiography='" + memberBiography + '\'' +
                 ", personalityTraits='" + personalityTraits + '\'' +
+                ", jobTitle='" + jobTitle + '\'' +
                 '}';
     }
 }
