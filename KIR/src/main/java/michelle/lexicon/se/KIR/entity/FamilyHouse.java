@@ -39,24 +39,6 @@ public class FamilyHouse {
         this.population = population;
     }
 
-    /*
-   public boolean addHeadOfTheHouse(FamilyHouseFamilyMemberLink member){
-
-        boolean found = false;
-        for(FamilyHouseFamilyMemberLink memberLink: familyMembers){
-            if(memberLink.getMember().getJobTitle().equalsIgnoreCase("ätteledare") ){
-                headOfTheHouse.add(member);
-            }
-        }
-        if (headOfTheHouse != null){
-            found = true;
-        }
-
-        return found;
-    }
-
-    */
-
     public int getFamilyHouseId() {
         return familyHouseId;
     }
@@ -134,13 +116,13 @@ public class FamilyHouse {
 
     @Override
     public int hashCode() {
-        return Objects.hash(familyHouseId, familyMembers, highSeat, resources, description, typicalTraits, militaryForce, population);
+        return Objects.hash(familyHouseId, highSeat, resources, description, typicalTraits, militaryForce, population);
     }
 
     @Override
     public String toString() {
         return "FamilyHouse{" + "familyHouseId=" + familyHouseId +
-                ", importantPersons=" + familyMembers +
+                ", importantPersons=" + familyMembers.size() +
                 ", highSeat='" + highSeat + '\'' +
                 ", resources='" + resources + '\'' +
                 ", description='" + description + '\'' +
