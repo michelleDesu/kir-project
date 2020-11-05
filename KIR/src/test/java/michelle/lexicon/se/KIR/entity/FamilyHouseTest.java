@@ -193,7 +193,14 @@ class FamilyHouseTest {
 
     @Test
     void equalsAndHashcode(){
-        FamilyHouse test = helga;
+        FamilyHouse test = new FamilyHouse(
+                houseLink,
+                "Berghem",
+                "mjöd, spannmål",
+                "Helgaätten är en realtivt stor ätt med en del värdshus",
+                "festglada, värdshusfolk, bågskyttar",
+                "En del bågskyttar, uthyrda hirdfolk till andra ätters hirder",
+                5000);
 
         assertTrue(test.equals(helga) && helga.equals(test));
         assertEquals(test.hashCode(), helga.hashCode());
